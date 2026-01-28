@@ -58,6 +58,7 @@
               <option value="deepseek">DeepSeek</option>
               <option value="claude">Anthropic Claude</option>
               <option value="gemini">Google Gemini</option>
+              <option value="ollama">Ollama Local</option>
             </select>
           </div>
 
@@ -586,7 +587,7 @@ import {
 } from '@/api/index'
 
 // 响应式数据
-const activeTab = ref('gitlab')
+const activeTab = ref('llm')
 const saving = ref(false)
 const message = ref('')
 const messageType = ref<'success' | 'error'>('success')
@@ -601,6 +602,7 @@ const showClaudeToken = ref(false)
 const testingClaude = ref(false)
 
 const tabs = [
+  { key: 'llm', label: 'LLM 配置' },
   { key: 'gitlab', label: 'GitLab 配置' },
   { key: 'claude-cli', label: 'Claude CLI 配置' },
   { key: 'webhook-events', label: 'Webhook 事件' },
